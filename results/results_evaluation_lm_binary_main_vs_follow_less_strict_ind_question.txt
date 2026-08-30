@@ -1,0 +1,255 @@
+====================================
+Question: Disease 
+Strict dataset:
+Coefficients with 95% Confidence Intervals:
+                             Estimate Std. Error t value Pr(>|t|) CI_lower
+(Intercept)                    67.603      1.562  43.281    0.000   64.536
+frameloss                      -7.737      3.875  -1.996    0.046  -15.347
+choice1                        -5.619      3.359  -1.673    0.095  -12.215
+taskfollow                     -4.155      3.493  -1.190    0.235  -11.015
+frameloss:choice1               5.036      5.300   0.950    0.342   -5.372
+frameloss:taskfollow            0.455      8.482   0.054    0.957  -16.202
+choice1:taskfollow              0.504      6.928   0.073    0.942  -13.101
+frameloss:choice1:taskfollow    5.053     10.991   0.460    0.646  -16.531
+                             CI_upper df_resid
+(Intercept)                    70.670      622
+frameloss                      -0.127      622
+choice1                         0.977      622
+taskfollow                      2.705      622
+frameloss:choice1              15.444      622
+frameloss:taskfollow           17.112      622
+choice1:taskfollow             14.109      622
+frameloss:choice1:taskfollow   26.637      622
+
+===== TASK effect (task | choice * frame) =====
+
+choice = 0, frame = gain:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow    4.155 3.493 622   1.190  0.2350
+
+choice = 1, frame = gain:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow    3.651 5.983 622   0.610  0.5420
+
+choice = 0, frame = loss:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow    3.700 7.730 622   0.479  0.6320
+
+choice = 1, frame = loss:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow   -1.857 3.615 622  -0.514  0.6080
+
+
+
+===== CHOICE effect (choice | task * frame) =====
+
+task = main, frame = gain:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    5.619 3.359 622   1.673  0.0950
+
+task = follow, frame = gain:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    5.115 6.059 622   0.844  0.3990
+
+task = main, frame = loss:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    0.583 4.099 622   0.142  0.8870
+
+task = follow, frame = loss:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1   -4.974 7.484 622  -0.665  0.5070
+
+
+
+===== FRAME effect (frame | task * choice) =====
+
+task = main, choice = 0:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss    7.737 3.875 622   1.996  0.0460
+
+task = follow, choice = 0:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss    7.282 7.545 622   0.965  0.3350
+
+task = main, choice = 1:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss    2.701 3.615 622   0.747  0.4550
+
+task = follow, choice = 1:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   -2.807 5.983 622  -0.469  0.6390
+
+
+
+
+
+====================================
+Question: Painting 
+Strict dataset:
+Coefficients with 95% Confidence Intervals:
+                             Estimate Std. Error t value Pr(>|t|) CI_lower
+(Intercept)                    70.619      1.340  52.696    0.000   67.988
+frameloss                     -10.698      2.763  -3.872    0.000  -16.124
+choice1                        -2.217      2.749  -0.806    0.420   -7.615
+taskfollow                     -4.160      3.713  -1.120    0.263  -11.452
+frameloss:choice1              12.030      4.179   2.879    0.004    3.823
+frameloss:taskfollow            4.560      5.955   0.766    0.444   -7.134
+choice1:taskfollow              0.686      7.158   0.096    0.924  -13.371
+frameloss:choice1:taskfollow  -16.130      9.356  -1.724    0.085  -34.503
+                             CI_upper df_resid
+(Intercept)                    73.250      622
+frameloss                      -5.272      622
+choice1                         3.181      622
+taskfollow                      3.132      622
+frameloss:choice1              20.237      622
+frameloss:taskfollow           16.254      622
+choice1:taskfollow             14.743      622
+frameloss:choice1:taskfollow    2.243      622
+
+===== TASK effect (task | choice * frame) =====
+
+choice = 0, frame = gain:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow    4.160 3.713 622   1.120  0.2630
+
+choice = 1, frame = gain:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow    3.474 6.119 622   0.568  0.5700
+
+choice = 0, frame = loss:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow   -0.400 4.656 622  -0.086  0.9320
+
+choice = 1, frame = loss:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow   15.043 3.825 622   3.933  <.0001
+
+
+
+===== CHOICE effect (choice | task * frame) =====
+
+task = main, frame = gain:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    2.217 2.749 622   0.806  0.4200
+
+task = follow, frame = gain:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    1.531 6.609 622   0.232  0.8170
+
+task = main, frame = loss:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1   -9.813 3.147 622  -3.118  0.0020
+
+task = follow, frame = loss:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    5.631 5.139 622   1.096  0.2740
+
+
+
+===== FRAME effect (frame | task * choice) =====
+
+task = main, choice = 0:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   10.698 2.763 622   3.872  <.0001
+
+task = follow, choice = 0:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss    6.138 5.276 622   1.163  0.2450
+
+task = main, choice = 1:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   -1.331 3.135 622  -0.425  0.6710
+
+task = follow, choice = 1:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   10.238 6.500 622   1.575  0.1160
+
+
+
+
+
+====================================
+Question: Virus 
+Strict dataset:
+Coefficients with 95% Confidence Intervals:
+                             Estimate Std. Error t value Pr(>|t|) CI_lower
+(Intercept)                    72.621      1.402  51.799    0.000   69.868
+frameloss                     -13.954      2.939  -4.748    0.000  -19.726
+choice1                        -8.640      2.506  -3.447    0.001  -13.561
+taskfollow                    -12.554      4.079  -3.077    0.002  -20.564
+frameloss:choice1              13.640      3.993   3.416    0.001    5.799
+frameloss:taskfollow           -6.651      7.562  -0.880    0.379  -21.501
+choice1:taskfollow              1.100      6.643   0.166    0.869  -11.945
+frameloss:choice1:taskfollow   14.646     10.141   1.444    0.149   -5.269
+                             CI_upper df_resid
+(Intercept)                    75.374      622
+frameloss                      -8.182      622
+choice1                        -3.719      622
+taskfollow                     -4.544      622
+frameloss:choice1              21.481      622
+frameloss:taskfollow            8.199      622
+choice1:taskfollow             14.145      622
+frameloss:choice1:taskfollow   34.561      622
+
+===== TASK effect (task | choice * frame) =====
+
+choice = 0, frame = gain:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow   12.554 4.079 622   3.077  0.0020
+
+choice = 1, frame = gain:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow   11.454 5.243 622   2.185  0.0290
+
+choice = 0, frame = loss:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow   19.205 6.367 622   3.016  0.0030
+
+choice = 1, frame = loss:
+ contrast      estimate    SE  df t.ratio p.value
+ main - follow    3.460 4.263 622   0.811  0.4170
+
+
+
+===== CHOICE effect (choice | task * frame) =====
+
+task = main, frame = gain:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    8.640 2.506 622   3.447  0.0010
+
+task = follow, frame = gain:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1    7.540 6.152 622   1.226  0.2210
+
+task = main, frame = loss:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1   -5.000 3.109 622  -1.608  0.1080
+
+task = follow, frame = loss:
+ contrast          estimate    SE  df t.ratio p.value
+ choice0 - choice1  -20.745 7.004 622  -2.962  0.0030
+
+
+
+===== FRAME effect (frame | task * choice) =====
+
+task = main, choice = 0:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   13.954 2.939 622   4.748  <.0001
+
+task = follow, choice = 0:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   20.605 6.967 622   2.957  0.0030
+
+task = main, choice = 1:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss    0.314 2.704 622   0.116  0.9080
+
+task = follow, choice = 1:
+ contrast    estimate    SE  df t.ratio p.value
+ gain - loss   -7.681 6.193 622  -1.240  0.2150
+
+
+
+
+

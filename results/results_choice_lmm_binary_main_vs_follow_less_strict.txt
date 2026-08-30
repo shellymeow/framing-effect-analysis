@@ -1,0 +1,10 @@
+                        Estimate   CI_lower   CI_upper Std. Error    z value
+(Intercept)          -1.44896889 -1.8012797 -1.0966580  0.1797537 -8.0608551
+frameloss             2.43839076  2.0454417  2.8313398  0.2004879 12.1622853
+taskfollow            0.29099223 -0.1584150  0.7403994  0.2292936  1.2690813
+frameloss:taskfollow  0.08409983 -0.5615382  0.7297379  0.3294132  0.2553019
+                         Pr(>|z|)
+(Intercept)          7.576259e-16
+frameloss            4.935827e-34
+taskfollow           2.044121e-01
+frameloss:taskfollow 7.984899e-01

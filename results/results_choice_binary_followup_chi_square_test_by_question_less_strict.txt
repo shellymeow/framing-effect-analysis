@@ -1,0 +1,39 @@
+===== Question: Disease =====
+      
+        0  1
+  gain 58 21
+  loss 12 64
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table_q
+X-squared = 49.642, df = 1, p-value = 1.845e-12
+
+
+
+===== Question: Virus =====
+      
+        0  1
+  gain 30 19
+  loss 13 29
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table_q
+X-squared = 7.1448, df = 1, p-value = 0.007518
+
+
+
+===== Question: Painting =====
+      
+        0  1
+  gain 37 14
+  loss 28 42
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table_q
+X-squared = 11.298, df = 1, p-value = 0.0007761
+
+
+

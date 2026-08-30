@@ -1,0 +1,14 @@
+                     Estimate Std.Error    t.value      p.value   CI_lower
+(Intercept)        58.3030142  2.224381 26.2108940 1.646557e-17  53.943308
+frameloss          -2.3292419  2.728489 -0.8536747 3.934564e-01  -7.676982
+choice0            10.4609823  1.803484  5.8004313 8.571563e-09   6.926220
+choice1             6.3087623  2.205147  2.8609264 4.299429e-03   1.986754
+frameloss:choice0 -10.1693174  2.885146 -3.5247148 4.405841e-04 -15.824100
+frameloss:choice1   0.4505908  2.911215  0.1547776 8.770236e-01  -5.255285
+                   CI_upper
+(Intercept)       62.662721
+frameloss          3.018498
+choice0           13.995745
+choice1           10.630770
+frameloss:choice0 -4.514535
+frameloss:choice1  6.156467

@@ -1,0 +1,24 @@
+$model
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: choice ~ frame + (1 | question) + (1 | participant_id)
+   Data: data_in
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ 303.2524  317.4174 -147.6262  295.2524       251 
+Random effects:
+ Groups         Name        Std.Dev.
+ participant_id (Intercept) 0.3435  
+ question       (Intercept) 0.1478  
+Number of obs: 255, groups:  participant_id, 192; question, 3
+Fixed Effects:
+(Intercept)    frameloss  
+    -0.9673       2.1068  
+
+$results_table
+     Term          Estimate             Estimate_CI_lower   Estimate_CI_upper    Estimate_CI        Std_Error           z_value           
+[1,] "(Intercept)" "-0.967331854368185" "-1.45108292960965" "-0.483580779126722" "[-1.451, -0.484]" "0.246816308389965" "-3.9192379980006"
+[2,] "frameloss"   "2.10683569295128"   "1.3504222447613"   "2.86324914114127"   "[1.35, 2.863]"    "0.385932320265309" "5.45908073079482"
+     p_value                OR                 OR_CI_lower         OR_CI_upper        OR_CI            
+[1,] "8.88293657499415e-05" "0.38009583740278" "0.234316402478214" "0.61657162743591" "[0.234, 0.617]" 
+[2,] "4.78606116103794e-08" "8.22218256722526" "3.85905465233926"  "17.5183541719999" "[3.859, 17.518]"
+

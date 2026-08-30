@@ -1,0 +1,48 @@
+=== MODEL SUMMARY ===
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: evaluation ~ frame * choice + (1 | question) + (1 | participant_id)
+   Data: data_less_strict_follow
+
+REML criterion at convergence: 3290.4
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.90932 -0.45412  0.00672  0.51508  2.82185 
+
+Random effects:
+ Groups         Name        Variance Std.Dev.
+ participant_id (Intercept) 363.508  19.066  
+ question       (Intercept)   2.207   1.486  
+ Residual                   188.822  13.741  
+Number of obs: 367, groups:  participant_id, 282; question, 3
+
+Fixed effects:
+                  Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)         62.722      2.360  16.698  26.576 4.22e-15 ***
+frameloss           -7.550      3.819 335.311  -1.977   0.0488 *  
+choice1             -5.854      3.457 313.497  -1.693   0.0914 .  
+frameloss:choice1    8.882      4.810 274.327   1.847   0.0659 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) frmlss choic1
+frameloss   -0.541              
+choice1     -0.453  0.280       
+frmlss:chc1  0.333 -0.646 -0.722
+
+
+=== FIXED EFFECTS WITH 95% CONFIDENCE INTERVALS ===
+
+                   Estimate Std.Error   t.value      p.value    CI_lower
+(Intercept)       62.721898  2.360099 26.575961 4.224175e-15  58.0961888
+frameloss         -7.550433  3.818728 -1.977212 4.883646e-02 -15.0350021
+choice1           -5.854194  3.457103 -1.693381 9.137625e-02 -12.6299927
+frameloss:choice1  8.882341  4.810000  1.846640 6.587624e-02  -0.5450862
+                     CI_upper      CI_formatted
+(Intercept)       67.34760657  [58.096, 67.348]
+frameloss         -0.06586364 [-15.035, -0.066]
+choice1            0.92160401   [-12.63, 0.922]
+frameloss:choice1 18.30976793   [-0.545, 18.31]

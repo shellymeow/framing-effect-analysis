@@ -1,0 +1,4 @@
+"Dataset","Choice (vs Non-neutral)","Estimate (log-OR)","95% CI (log-OR)","OR","95% CI (OR)","p"
+"Strict","Neutral (loss vs gain)","0.01","[-0.54, 0.55]","1.01","[0.59, 1.73]","0.98"
+"Less Strict","Neutral (loss vs gain)","0.27","[-0.18, 0.72]","1.31","[0.84, 2.05]","0.23"
+"Super Strict","Neutral (loss vs gain)","0.08","[-0.56, 0.71]","1.08","[0.57, 2.04]","0.81"

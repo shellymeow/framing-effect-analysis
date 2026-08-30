@@ -1,0 +1,6 @@
+
+	Pearson's Chi-squared test
+
+data:  table_frame_choice_super_strict
+X-squared = 163.18, df = 2, p-value < 2.2e-16
+

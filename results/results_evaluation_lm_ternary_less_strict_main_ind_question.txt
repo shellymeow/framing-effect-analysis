@@ -1,0 +1,162 @@
+====================================
+Question: Disease 
+Less strict dataset:
+Model Summary with 95% Confidence Intervals:
+                    Estimate Std. Error     t value     Pr(>|t|)    CI_lower
+(Intercept)       61.2278481   2.720197 22.50860828 1.375113e-82  55.8859988
+frameloss         -3.1489007   3.884717 -0.81058687 4.179120e-01 -10.7776033
+choice0            6.3756002   3.149463  2.02434495 4.336016e-02   0.1907693
+choice1            0.7565269   4.066103  0.18605699 8.524605e-01  -7.2283764
+frameloss:choice0 -4.5878809   5.531804 -0.82936428 4.072155e-01 -15.4510885
+frameloss:choice1  0.4481078   5.346693  0.08381028 9.332342e-01 -10.0515832
+                   CI_upper
+(Intercept)       66.569697
+frameloss          4.479802
+choice0           12.560431
+choice1            8.741430
+frameloss:choice0  6.275327
+frameloss:choice1 10.947799
+
+===== CHOICE effect (choice | frame) =====
+
+frame = gain:
+ contrast          estimate   SE  df t.ratio p.value
+ choice2 - choice0   -6.376 3.15 624  -2.024  0.1072
+ choice2 - choice1   -0.757 4.07 624  -0.186  0.9811
+ choice0 - choice1    5.619 3.41 624   1.646  0.2272
+
+frame = loss:
+ contrast          estimate   SE  df t.ratio p.value
+ choice2 - choice0   -1.788 4.55 624  -0.393  0.9184
+ choice2 - choice1   -1.205 3.47 624  -0.347  0.9358
+ choice0 - choice1    0.583 4.17 624   0.140  0.9893
+
+P value adjustment: tukey method for comparing a family of 3 estimates 
+
+
+===== FRAME effect (frame | choice) =====
+
+choice = 2:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss     3.15 3.88 624   0.811  0.4179
+
+choice = 0:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss     7.74 3.94 624   1.965  0.0499
+
+choice = 1:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss     2.70 3.67 624   0.735  0.4625
+
+
+
+
+
+====================================
+Question: Painting 
+Less strict dataset:
+Model Summary with 95% Confidence Intervals:
+                   Estimate Std. Error   t value     Pr(>|t|)   CI_lower
+(Intercept)       63.058824   2.976592 21.184905 1.854215e-75  57.213472
+frameloss         -4.144538   3.913479 -1.059042 2.899905e-01 -11.829722
+choice0            7.560610   3.269482  2.312479 2.107579e-02   1.140089
+choice1            5.343774   3.837770  1.392416 1.642923e-01  -2.192736
+frameloss:choice0 -6.553843   4.805239 -1.363895 1.730923e-01 -15.990242
+frameloss:choice1  5.475885   5.032817  1.088036 2.769994e-01  -4.407425
+                   CI_upper
+(Intercept)       68.904175
+frameloss          3.540646
+choice0           13.981131
+choice1           12.880283
+frameloss:choice0  2.882557
+frameloss:choice1 15.359196
+
+===== CHOICE effect (choice | frame) =====
+
+frame = gain:
+ contrast          estimate   SE  df t.ratio p.value
+ choice2 - choice0    -7.56 3.27 624  -2.312  0.0548
+ choice2 - choice1    -5.34 3.84 624  -1.392  0.3455
+ choice0 - choice1     2.22 2.77 624   0.799  0.7038
+
+frame = loss:
+ contrast          estimate   SE  df t.ratio p.value
+ choice2 - choice0    -1.01 3.52 624  -0.286  0.9559
+ choice2 - choice1   -10.82 3.26 624  -3.323  0.0027
+ choice0 - choice1    -9.81 3.18 624  -3.089  0.0059
+
+P value adjustment: tukey method for comparing a family of 3 estimates 
+
+
+===== FRAME effect (frame | choice) =====
+
+choice = 2:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss     4.14 3.91 624   1.059  0.2900
+
+choice = 0:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss    10.70 2.79 624   3.837  0.0001
+
+choice = 1:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss    -1.33 3.16 624  -0.421  0.6741
+
+
+
+
+
+====================================
+Question: Virus 
+Less strict dataset:
+Model Summary with 95% Confidence Intervals:
+                     Estimate Std. Error     t value     Pr(>|t|)   CI_lower
+(Intercept)        56.8979592   3.045699 18.68141276 3.409136e-62  50.916898
+frameloss           0.3163265   4.483147  0.07055903 9.437713e-01  -8.487557
+choice0            15.7225765   3.362361  4.67605305 3.586707e-06   9.119664
+choice1             7.0824330   3.705744  1.91120429 5.643619e-02  -0.194806
+frameloss:choice0 -14.2701956   5.386533 -2.64923586 8.271679e-03 -24.848123
+frameloss:choice1  -0.6300520   5.258038 -0.11982646 9.046592e-01 -10.955644
+                   CI_upper
+(Intercept)       62.879020
+frameloss          9.120210
+choice0           22.325489
+choice1           14.359672
+frameloss:choice0 -3.692268
+frameloss:choice1  9.695540
+
+===== CHOICE effect (choice | frame) =====
+
+frame = gain:
+ contrast          estimate   SE  df t.ratio p.value
+ choice2 - choice0   -15.72 3.36 624  -4.676  <.0001
+ choice2 - choice1    -7.08 3.71 624  -1.911  0.1363
+ choice0 - choice1     8.64 2.55 624   3.393  0.0021
+
+frame = loss:
+ contrast          estimate   SE  df t.ratio p.value
+ choice2 - choice0    -1.45 4.21 624  -0.345  0.9365
+ choice2 - choice1    -6.45 3.73 624  -1.730  0.1949
+ choice0 - choice1    -5.00 3.16 624  -1.583  0.2538
+
+P value adjustment: tukey method for comparing a family of 3 estimates 
+
+
+===== FRAME effect (frame | choice) =====
+
+choice = 2:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss   -0.316 4.48 624  -0.071  0.9438
+
+choice = 0:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss   13.954 2.99 624   4.673  <.0001
+
+choice = 1:
+ contrast    estimate   SE  df t.ratio p.value
+ gain - loss    0.314 2.75 624   0.114  0.9091
+
+
+
+
+

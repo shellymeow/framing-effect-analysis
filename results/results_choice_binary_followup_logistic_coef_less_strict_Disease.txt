@@ -1,0 +1,6 @@
+             Estimate  CI_Lower   CI_Upper Std_Error   z_value      p_value
+(Intercept) -1.015921 -1.515087 -0.5167539 0.2546769 -3.989057 6.633657e-05
+frameloss    2.689897  1.896596  3.4831975 0.4047452  6.645903 3.013644e-11
+            Odds_Ratio OR_CI_Lower OR_CI_Upper
+(Intercept)   0.362069    0.219789   0.5964536
+frameloss    14.730159    6.663177  32.5636796

@@ -1,0 +1,7 @@
+"dataset","dataset_slug","model_name","npar","AIC","BIC","logLik","Chisq","Df","Pr(>Chisq)","significance"
+"Strict","strict","multinom_no_interaction","8.00","2582.88","2624.67","-1283.44",NA,NA,NA,NA
+"Strict","strict","multinom_interaction","12.00","2581.86","2644.54","-1278.93","9.02","4.00","0.06","ns"
+"Less strict","less_strict","multinom_no_interaction","8.00","3627.69","3672.05","-1805.85",NA,NA,NA,NA
+"Less strict","less_strict","multinom_interaction","12.00","3623.33","3689.86","-1799.66","12.37","4.00","0.01","<.05*"
+"Super strict","super_strict","multinom_no_interaction","8.00","1791.65","1830.59","-887.83",NA,NA,NA,NA
+"Super strict","super_strict","multinom_interaction","12.00","1792.49","1850.89","-884.25","7.16","4.00","0.13","ns"

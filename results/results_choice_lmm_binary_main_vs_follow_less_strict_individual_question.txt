@@ -1,0 +1,237 @@
+====================================
+Question: Disease 
+Less strict dataset:
+Model Summary:
+
+Call:
+glm(formula = choice ~ frame * task, family = binomial, data = data)
+
+Coefficients:
+                     Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -1.2879     0.1412  -9.121   <2e-16 ***
+frameloss              2.3790     0.2228  10.680   <2e-16 ***
+taskfollow             0.2719     0.2912   0.934    0.350    
+frameloss:taskfollow   0.3109     0.4620   0.673    0.501    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 866.85  on 629  degrees of freedom
+Residual deviance: 668.72  on 626  degrees of freedom
+AIC: 676.72
+
+Number of Fisher Scoring iterations: 4
+
+
+Coefficients with 95% Profile-Likelihood CIs (log-odds):
+                       Estimate Std. Error    z value     Pr(>|z|)   CI_lower
+(Intercept)          -1.2878543  0.1411925 -9.1212652 7.425238e-20 -1.5723430
+frameloss             2.3790316  0.2227559 10.6799947 1.262789e-26  1.9504942
+taskfollow            0.2719337  0.2911969  0.9338482 3.503822e-01 -0.3145300
+frameloss:taskfollow  0.3108654  0.4619944  0.6728770 5.010256e-01 -0.5735886
+                       CI_upper
+(Intercept)          -1.0178984
+frameloss             2.8247492
+taskfollow            0.8317027
+frameloss:taskfollow  1.2439629
+
+Odds Ratios with 95% Profile-Likelihood CIs:
+                     Odds_Ratio OR_CI_lower OR_CI_upper
+(Intercept)           0.2758621   0.2075583   0.3613536
+frameloss            10.7944444   7.0321623  16.8567164
+taskfollow            1.3125000   0.7301319   2.2972269
+frameloss:taskfollow  1.3646055   0.5634996   3.4693349
+
+Estimated Marginal Means (on probability scale):
+ frame task    prob     SE  df asymp.LCL asymp.UCL
+ gain  main   0.216 0.0239 Inf     0.173     0.267
+ loss  main   0.749 0.0324 Inf     0.680     0.807
+ gain  follow 0.266 0.0497 Inf     0.180     0.374
+ loss  follow 0.842 0.0418 Inf     0.742     0.908
+
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Contrast: Frame effect within each task:
+task = main:
+ contrast    odds.ratio     SE  df null z.ratio p.value
+ gain / loss     0.0926 0.0206 Inf    1 -10.680  <.0001
+
+task = follow:
+ contrast    odds.ratio     SE  df null z.ratio p.value
+ gain / loss     0.0679 0.0275 Inf    1  -6.646  <.0001
+
+Tests are performed on the log odds ratio scale 
+
+Contrast: Task effect within each frame:
+frame = gain:
+ contrast      odds.ratio    SE  df null z.ratio p.value
+ main / follow      0.762 0.222 Inf    1  -0.934  0.3504
+
+frame = loss:
+ contrast      odds.ratio    SE  df null z.ratio p.value
+ main / follow      0.558 0.200 Inf    1  -1.625  0.1042
+
+Tests are performed on the log odds ratio scale 
+
+
+
+====================================
+Question: Painting 
+Less strict dataset:
+Model Summary:
+
+Call:
+glm(formula = choice ~ frame * task, family = binomial, data = data)
+
+Coefficients:
+                     Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -1.1656     0.1305  -8.930  < 2e-16 ***
+frameloss              1.5262     0.1984   7.692 1.45e-14 ***
+taskfollow             0.1937     0.3398   0.570    0.569    
+frameloss:taskfollow  -0.1489     0.4442  -0.335    0.738    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 839.22  on 629  degrees of freedom
+Residual deviance: 760.05  on 626  degrees of freedom
+AIC: 768.05
+
+Number of Fisher Scoring iterations: 4
+
+
+Coefficients with 95% Profile-Likelihood CIs (log-odds):
+                       Estimate Std. Error    z value     Pr(>|z|)   CI_lower
+(Intercept)          -1.1655829  0.1305204 -8.9302755 4.249492e-19 -1.4275197
+frameloss             1.5261975  0.1984131  7.6920180 1.448323e-14  1.1408971
+taskfollow            0.1937223  0.3398397  0.5700403 5.686503e-01 -0.5006505
+frameloss:taskfollow -0.1488718  0.4442376 -0.3351174 7.375365e-01 -1.0063124
+                       CI_upper
+(Intercept)          -0.9151253
+frameloss             1.9193600
+taskfollow            0.8406120
+frameloss:taskfollow  0.7404182
+
+Odds Ratios with 95% Profile-Likelihood CIs:
+                     Odds_Ratio OR_CI_lower OR_CI_upper
+(Intercept)           0.3117409   0.2399032   0.4004664
+frameloss             4.6006494   3.1295746   6.8165947
+taskfollow            1.2137592   0.6061362   2.3177850
+frameloss:taskfollow  0.8616796   0.3655645   2.0968122
+
+Estimated Marginal Means (on probability scale):
+ frame task    prob     SE  df asymp.LCL asymp.UCL
+ gain  main   0.238 0.0236 Inf     0.194     0.287
+ loss  main   0.589 0.0362 Inf     0.517     0.658
+ gain  follow 0.275 0.0625 Inf     0.170     0.412
+ loss  follow 0.600 0.0586 Inf     0.482     0.708
+
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Contrast: Frame effect within each task:
+task = main:
+ contrast    odds.ratio     SE  df null z.ratio p.value
+ gain / loss      0.217 0.0431 Inf    1  -7.692  <.0001
+
+task = follow:
+ contrast    odds.ratio     SE  df null z.ratio p.value
+ gain / loss      0.252 0.1000 Inf    1  -3.465  0.0005
+
+Tests are performed on the log odds ratio scale 
+
+Contrast: Task effect within each frame:
+frame = gain:
+ contrast      odds.ratio    SE  df null z.ratio p.value
+ main / follow      0.824 0.280 Inf    1  -0.570  0.5687
+
+frame = loss:
+ contrast      odds.ratio    SE  df null z.ratio p.value
+ main / follow      0.956 0.274 Inf    1  -0.157  0.8754
+
+Tests are performed on the log odds ratio scale 
+
+
+
+====================================
+Question: Virus 
+Less strict dataset:
+Model Summary:
+
+Call:
+glm(formula = choice ~ frame * task, family = binomial, data = data)
+
+Coefficients:
+                     Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.7867     0.1194  -6.586 4.52e-11 ***
+frameloss              1.5875     0.1903   8.341  < 2e-16 ***
+taskfollow             0.3299     0.3166   1.042    0.297    
+frameloss:taskfollow  -0.3283     0.4833  -0.679    0.497    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 871.31  on 629  degrees of freedom
+Residual deviance: 786.24  on 626  degrees of freedom
+AIC: 794.24
+
+Number of Fisher Scoring iterations: 4
+
+
+Coefficients with 95% Profile-Likelihood CIs (log-odds):
+                       Estimate Std. Error    z value     Pr(>|z|)   CI_lower
+(Intercept)          -0.7866732  0.1194496 -6.5858195 4.523831e-11 -1.0244996
+frameloss             1.5874511  0.1903219  8.3408755 7.374249e-17  1.2186992
+taskfollow            0.3299148  0.3165961  1.0420685 2.973799e-01 -0.3041993
+frameloss:taskfollow -0.3283462  0.4833147 -0.6793632 4.969078e-01 -1.2618607
+                       CI_upper
+(Intercept)          -0.5557039
+frameloss             1.9654032
+taskfollow            0.9435044
+frameloss:taskfollow  0.6391666
+
+Odds Ratios with 95% Profile-Likelihood CIs:
+                     Odds_Ratio OR_CI_lower OR_CI_upper
+(Intercept)           0.4553571   0.3589761   0.5736683
+frameloss             4.8912656   3.3827847   7.1377900
+taskfollow            1.3908497   0.7377138   2.5689684
+frameloss:taskfollow  0.7201137   0.2831267   1.8949010
+
+Estimated Marginal Means (on probability scale):
+ frame task    prob     SE  df asymp.LCL asymp.UCL
+ gain  main   0.313 0.0257 Inf     0.265     0.365
+ loss  main   0.690 0.0317 Inf     0.625     0.749
+ gain  follow 0.388 0.0696 Inf     0.263     0.529
+ loss  follow 0.690 0.0713 Inf     0.537     0.811
+
+Confidence level used: 0.95 
+Intervals are back-transformed from the logit scale 
+
+Contrast: Frame effect within each task:
+task = main:
+ contrast    odds.ratio     SE  df null z.ratio p.value
+ gain / loss      0.204 0.0389 Inf    1  -8.341  <.0001
+
+task = follow:
+ contrast    odds.ratio     SE  df null z.ratio p.value
+ gain / loss      0.284 0.1260 Inf    1  -2.834  0.0046
+
+Tests are performed on the log odds ratio scale 
+
+Contrast: Task effect within each frame:
+frame = gain:
+ contrast      odds.ratio    SE  df null z.ratio p.value
+ main / follow      0.719 0.228 Inf    1  -1.042  0.2974
+
+frame = loss:
+ contrast      odds.ratio    SE  df null z.ratio p.value
+ main / follow      0.998 0.365 Inf    1  -0.004  0.9966
+
+Tests are performed on the log odds ratio scale 
+
+
+

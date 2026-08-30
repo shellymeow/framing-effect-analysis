@@ -1,0 +1,68 @@
+MODEL SUMMARY:
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: evaluation ~ frame * choice * task + (1 | participant_id) + (1 |  
+    question)
+   Data: df_strict_no_neutral
+
+REML criterion at convergence: 11884.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.5089 -0.4852  0.0454  0.5445  3.2563 
+
+Random effects:
+ Groups         Name        Variance Std.Dev.
+ participant_id (Intercept) 288.559  16.987  
+ question       (Intercept)   5.208   2.282  
+ Residual                   198.552  14.091  
+Number of obs: 1371, groups:  participant_id, 457; question, 3
+
+Fixed effects:
+                              Estimate Std. Error        df t value Pr(>|t|)
+(Intercept)                    68.3887     1.8141    6.0871  37.699 1.90e-08
+frameloss                     -12.7747     2.2962  911.6422  -5.563 3.48e-08
+choice1                        -3.2415     1.6483 1190.8491  -1.967  0.04947
+taskfollow                     -5.8439     1.9545 1103.1628  -2.990  0.00285
+frameloss:choice1              10.4008     2.5078 1194.5375   4.147 3.60e-05
+frameloss:taskfollow            0.1224     3.8652 1112.0439   0.032  0.97474
+choice1:taskfollow             -1.6354     3.5829 1056.0360  -0.456  0.64815
+frameloss:choice1:taskfollow    1.7304     5.2142 1071.0903   0.332  0.74005
+                                
+(Intercept)                  ***
+frameloss                    ***
+choice1                      *  
+taskfollow                   ** 
+frameloss:choice1            ***
+frameloss:taskfollow            
+choice1:taskfollow              
+frameloss:choice1:taskfollow    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) frmlss choic1 tskfll frml:1 frmls: chc1:t
+frameloss   -0.373                                          
+choice1     -0.215  0.171                                   
+taskfollow  -0.160  0.124  0.161                            
+frmlss:chc1  0.141 -0.541 -0.656 -0.103                     
+frmlss:tskf  0.082 -0.314 -0.086 -0.505  0.278              
+chc1:tskfll  0.087 -0.069 -0.403 -0.503  0.264  0.255       
+frmlss:ch1: -0.060  0.237  0.276  0.346 -0.427 -0.710 -0.687
+
+
+95% CONFIDENCE INTERVALS (WALD METHOD):
+
+                                  2.5 %      97.5 %
+.sig01                               NA          NA
+.sig02                               NA          NA
+.sigma                               NA          NA
+(Intercept)                   64.833258 71.94420704
+frameloss                    -17.275247 -8.27414456
+choice1                       -6.472129 -0.01078562
+taskfollow                    -9.674549 -2.01323067
+frameloss:choice1              5.485604 15.31594940
+frameloss:taskfollow          -7.453293  7.69808825
+choice1:taskfollow            -8.657732  5.38683796
+frameloss:choice1:taskfollow  -8.489205 11.95004197

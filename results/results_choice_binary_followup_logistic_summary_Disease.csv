@@ -1,0 +1,4 @@
+Dataset,Term,Estimate (log-OR),95% CI (log-OR),OR,95% CI (OR),p
+Strict,frameloss,2.88,"[1.89, 3.87]",17.81,"[6.60, 48.10]",<.001
+Less Strict,frameloss,2.69,"[1.90, 3.48]",14.73,"[6.66, 32.56]",<.001
+Super Strict,frameloss,2.42,"[1.17, 3.66]",11.20,"[3.23, 38.83]",<.001

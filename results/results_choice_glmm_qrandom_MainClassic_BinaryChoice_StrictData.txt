@@ -1,0 +1,34 @@
+=== Model Summary ===
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: choice ~ frame + (1 | question) + (1 | participant_id)
+   Data: data
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1240.2    1260.3    -616.1    1232.2      1112 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.7419 -0.4019 -0.3120  0.4329  1.9501 
+
+Random effects:
+ Groups         Name        Variance Std.Dev.
+ participant_id (Intercept) 1.91807  1.3849  
+ question       (Intercept) 0.05114  0.2261  
+Number of obs: 1116, groups:  participant_id, 446; question, 3
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -1.6192     0.2119  -7.641 2.15e-14 ***
+frameloss     2.7465     0.2645  10.383  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+          (Intr)
+frameloss -0.600
+
+=== Coefficients with 95% Confidence Intervals ===
+         Term Estimate            CI_95 Std_Error z_value p_value Odds_Ratio        OR_CI_95
+1 (Intercept)   -1.619 [-2.035, -1.204]     0.212  -7.641       0      0.198    [0.131, 0.3]
+2   frameloss    2.746   [2.228, 3.265]     0.265  10.383       0     15.588 [9.282, 26.178]

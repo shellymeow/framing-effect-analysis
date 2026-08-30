@@ -1,0 +1,180 @@
+====================================
+Question: Disease 
+Super strict dataset:
+Model Summary:
+
+Call:
+lm(formula = evaluation ~ frame * choice, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-57.722 -13.367  -3.218  15.286  50.200 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        57.7222     5.6572  10.203 2.19e-14 ***
+frameloss          -7.9222    12.1333  -0.653    0.516    
+choice1             5.5000     9.7985   0.561    0.577    
+frameloss:choice1  -0.5857    15.2249  -0.038    0.969    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 24 on 56 degrees of freedom
+Multiple R-squared:  0.02264,	Adjusted R-squared:  -0.02972 
+F-statistic: 0.4324 on 3 and 56 DF,  p-value: 0.7306
+
+
+Residual degrees of freedom: 56 
+95% Confidence Intervals for Coefficients:
+                      2.5 %   97.5 %
+(Intercept)        46.38953 69.05491
+frameloss         -32.22813 16.38368
+choice1           -14.12879 25.12879
+frameloss:choice1 -31.08487 29.91344
+
+===== CHOICE effect (choice | frame) =====
+
+frame = gain:
+ contrast          estimate   SE df t.ratio p.value
+ choice0 - choice1    -5.50  9.8 56  -0.561  0.5768
+
+frame = loss:
+ contrast          estimate   SE df t.ratio p.value
+ choice0 - choice1    -4.91 11.7 56  -0.422  0.6748
+
+
+
+===== FRAME effect (frame | choice) =====
+
+choice = 0:
+ contrast    estimate   SE df t.ratio p.value
+ gain - loss     7.92 12.1 56   0.653  0.5165
+
+choice = 1:
+ contrast    estimate   SE df t.ratio p.value
+ gain - loss     8.51  9.2 56   0.925  0.3589
+
+
+
+
+
+====================================
+Question: Painting 
+Super strict dataset:
+Model Summary:
+
+Call:
+lm(formula = evaluation ~ frame * choice, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-41.143 -11.595  -1.143  11.829  48.857 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         62.048      4.737  13.098   <2e-16 ***
+frameloss           -6.754      7.082  -0.954    0.344    
+choice1             -2.048     11.843  -0.173    0.863    
+frameloss:choice1   -2.104     13.799  -0.152    0.879    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 21.71 on 59 degrees of freedom
+Multiple R-squared:  0.04541,	Adjusted R-squared:  -0.003128 
+F-statistic: 0.9355 on 3 and 59 DF,  p-value: 0.4293
+
+
+Residual degrees of freedom: 59 
+95% Confidence Intervals for Coefficients:
+                      2.5 %    97.5 %
+(Intercept)        52.56875 71.526491
+frameloss         -20.92527  7.418266
+choice1           -25.74480 21.649562
+frameloss:choice1 -29.71515 25.507867
+
+===== CHOICE effect (choice | frame) =====
+
+frame = gain:
+ contrast          estimate    SE df t.ratio p.value
+ choice0 - choice1     2.05 11.80 59   0.173  0.8633
+
+frame = loss:
+ contrast          estimate    SE df t.ratio p.value
+ choice0 - choice1     4.15  7.08 59   0.586  0.5600
+
+
+
+===== FRAME effect (frame | choice) =====
+
+choice = 0:
+ contrast    estimate    SE df t.ratio p.value
+ gain - loss     6.75  7.08 59   0.954  0.3442
+
+choice = 1:
+ contrast    estimate    SE df t.ratio p.value
+ gain - loss     8.86 11.80 59   0.748  0.4575
+
+
+
+
+
+====================================
+Question: Virus 
+Super strict dataset:
+Model Summary:
+
+Call:
+lm(formula = evaluation ~ frame * choice, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.100 -10.400  -1.067  12.400  42.933 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         54.600      4.438  12.303  2.4e-15 ***
+frameloss          -34.200      8.876  -3.853 0.000402 ***
+choice1             -8.500      7.017  -1.211 0.232700    
+frameloss:choice1   45.167     11.315   3.992 0.000265 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 17.19 on 41 degrees of freedom
+Multiple R-squared:  0.316,	Adjusted R-squared:  0.266 
+F-statistic: 6.314 on 3 and 41 DF,  p-value: 0.001273
+
+
+Residual degrees of freedom: 41 
+95% Confidence Intervals for Coefficients:
+                      2.5 %     97.5 %
+(Intercept)        45.63739  63.562608
+frameloss         -52.12522 -16.274784
+choice1           -22.67113   5.671127
+frameloss:choice1  22.31641  68.016923
+
+===== CHOICE effect (choice | frame) =====
+
+frame = gain:
+ contrast          estimate   SE df t.ratio p.value
+ choice0 - choice1      8.5 7.02 41   1.211  0.2327
+
+frame = loss:
+ contrast          estimate   SE df t.ratio p.value
+ choice0 - choice1    -36.7 8.88 41  -4.131  0.0002
+
+
+
+===== FRAME effect (frame | choice) =====
+
+choice = 0:
+ contrast    estimate   SE df t.ratio p.value
+ gain - loss     34.2 8.88 41   3.853  0.0004
+
+choice = 1:
+ contrast    estimate   SE df t.ratio p.value
+ gain - loss    -11.0 7.02 41  -1.563  0.1258
+
+
+
+
+

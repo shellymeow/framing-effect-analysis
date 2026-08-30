@@ -1,0 +1,39 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: evaluation ~ frame * choice + question + (1 | participant_id)
+   Data: data_less_strict_main
+
+REML criterion at convergence: 16505.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.9503 -0.4770  0.0721  0.5428  3.7210 
+
+Random effects:
+ Groups         Name        Variance Std.Dev.
+ participant_id (Intercept) 281      16.76   
+ Residual                   217      14.73   
+Number of obs: 1890, groups:  participant_id, 630
+
+Fixed effects:
+                   Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)         58.5562     1.5965 1803.9617  36.677  < 2e-16 ***
+frameloss           -2.8168     2.2522 1623.6884  -1.251 0.211228    
+choice0              9.5874     1.4917 1557.0076   6.427 1.72e-10 ***
+choice1              3.8366     1.7825 1583.8563   2.152 0.031515 *  
+questionPainting     4.1366     0.8365 1260.9296   4.945 8.64e-07 ***
+questionVirus        2.3888     0.8401 1262.7886   2.844 0.004532 ** 
+frameloss:choice0   -8.7546     2.3988 1586.9537  -3.650 0.000271 ***
+frameloss:choice1    2.5855     2.3885 1580.9908   1.082 0.279203    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) frmlss choic0 choic1 qstnPn qstnVr frml:0
+frameloss   -0.666                                          
+choice0     -0.717  0.522                                   
+choice1     -0.586  0.433  0.646                            
+questnPntng -0.204 -0.033 -0.072 -0.072                     
+questionVrs -0.200  0.004 -0.061 -0.115  0.503              
+frmlss:chc0  0.463 -0.633 -0.616 -0.393 -0.012 -0.039       
+frmlss:chc1  0.443 -0.639 -0.481 -0.741  0.065  0.032  0.572

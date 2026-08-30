@@ -1,0 +1,35 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: evaluation ~ frame * choice + question + (1 | participant_id)
+   Data: data_strict_follow
+
+REML criterion at convergence: 2255.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.03595 -0.44070 -0.03042  0.44895  1.95842 
+
+Random effects:
+ Groups         Name        Variance Std.Dev.
+ participant_id (Intercept) 360.7    18.99   
+ Residual                   174.1    13.19   
+Number of obs: 255, groups:  participant_id, 192
+
+Fixed effects:
+                  Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)         62.637      2.791 248.743  22.443  < 2e-16 ***
+frameloss          -12.716      4.610 247.630  -2.758  0.00624 ** 
+choice1             -5.404      3.882 175.767  -1.392  0.16561    
+questionPainting     1.706      2.554 129.086   0.668  0.50544    
+questionVirus       -4.776      2.818 126.668  -1.695  0.09255 .  
+frameloss:choice1   11.761      5.559 168.577   2.116  0.03583 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) frmlss choic1 qstnPn qstnVr
+frameloss   -0.445                            
+choice1     -0.338  0.236                     
+questnPntng -0.359 -0.183 -0.059              
+questionVrs -0.346 -0.008 -0.118  0.370       
+frmlss:chc1  0.194 -0.639 -0.703  0.178  0.103
