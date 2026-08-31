@@ -1,0 +1,7 @@
+"Dataset","Choice (vs Sure)","Estimate (log-OR)","95% CI (log-OR)","OR","95% CI (OR)","p"
+"Strict","Risky (loss vs gain)","2.52","[2.01, 3.03]","12.44","[7.45, 20.76]","<.001"
+"Strict","Neutral (loss vs gain)","1.71","[1.17, 2.25]","5.52","[3.23, 9.45]","<.001"
+"Less Strict","Risky (loss vs gain)","2.38","[1.94, 2.82]","10.79","[6.98, 16.70]","<.001"
+"Less Strict","Neutral (loss vs gain)","1.60","[1.15, 2.05]","4.96","[3.17, 7.77]","<.001"
+"Super Strict","Risky (loss vs gain)","2.52","[1.93, 3.12]","12.49","[6.88, 22.66]","<.001"
+"Super Strict","Neutral (loss vs gain)","1.75","[1.09, 2.41]","5.75","[2.98, 11.09]","<.001"

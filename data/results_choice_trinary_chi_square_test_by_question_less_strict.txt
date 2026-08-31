@@ -1,0 +1,39 @@
+===== Question: Disease =====
+      
+         0   1   2
+  gain 232  64  79
+  loss  45 134  76
+
+	Pearson's Chi-squared test
+
+data:  table_q
+X-squared = 133.02, df = 2, p-value < 2.2e-16
+
+
+
+===== Question: Painting =====
+      
+         0   1   2
+  gain 247  77  51
+  loss  76 109  70
+
+	Pearson's Chi-squared test
+
+data:  table_q
+X-squared = 79.028, df = 2, p-value < 2.2e-16
+
+
+
+===== Question: Virus =====
+      
+         0   1   2
+  gain 224 102  49
+  loss  66 147  42
+
+	Pearson's Chi-squared test
+
+data:  table_q
+X-squared = 74.603, df = 2, p-value < 2.2e-16
+
+
+

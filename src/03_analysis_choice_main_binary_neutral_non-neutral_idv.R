@@ -25,7 +25,7 @@ print(current_dir)
 
 # Define paths for data loading
 input_path <- file.path(current_dir, "data")
-output_path <- file.path(current_dir, "results")
+output_path <- file.path(current_dir, "stat_results")
 
 # Define the file names for the CSV files
 file_name_1 <- "data_choice_evaluation_strict.csv"
@@ -177,42 +177,6 @@ all_results_super_strict <- do.call(rbind, main_results_super_strict)
 
 # ----------------------------------
 # 5. Save the results
-# ----------------------------------
-# ----------------------------------
-# 5.1  Strict dataset
-# ----------------------------------
-output_file_path <- file.path(
-  output_path,
-  "results_choice_main_neutral_non-neutral_strict.csv"
-)
-# Save the results to the specified CSV file
-write.csv(all_results_strict, output_file_path, row.names = FALSE)
-
-# ----------------------------------
-# 5.2 Less strict dataset
-# ----------------------------------
-# Save the results to a CSV file
-output_file_path <- file.path(
-  output_path,
-  "results_choice_main_neutral_non-neutral_less_strict.csv"
-)
-# Save the results to the specified CSV file
-write.csv(all_results_less_strict, output_file_path, row.names = FALSE)
-
-# ----------------------------------
-# 5.3 Super strict dataset
-# ----------------------------------
-# Save the results to a CSV file
-output_file_path <- file.path(
-  output_path,
-  "results_choice_main_neutral_non-neutral_super_strict.csv"
-)
-# Save the results to the specified CSV file
-write.csv(all_results_super_strict, output_file_path, row.names = FALSE)
-
-# ----------------------------------
-# 6. Save formatted summaries for each question
-# ----------------------------------
 format_num <- function(x) {
   sprintf("%.2f", x)
 }
@@ -242,6 +206,7 @@ create_question_summary <- function(data, dataset_label, question_name) {
   or_ci_upper <- exp(ci_upper)
 
   data.frame(
+    Question = question_name,
     Dataset = dataset_label,
     `Choice (vs Non-neutral)` = "Neutral (loss vs gain)",
     `Estimate (log-OR)` = format_num(estimate),
@@ -253,23 +218,27 @@ create_question_summary <- function(data, dataset_label, question_name) {
   )
 }
 
-for (question_name in questions) {
-  question_summary <- rbind(
-    create_question_summary(df_strict, "Strict", question_name),
-    create_question_summary(df_less_strict, "Less Strict", question_name),
-    create_question_summary(df_super_strict, "Super Strict", question_name)
-  )
+all_question_summary <- do.call(
+  rbind,
+  lapply(questions, function(question_name) {
+    rbind(
+      create_question_summary(df_strict, "Strict", question_name),
+      create_question_summary(df_less_strict, "Less Strict", question_name),
+      create_question_summary(df_super_strict, "Super Strict", question_name)
+    )
+  })
+)
 
-  write.csv(
-    question_summary,
-    file.path(
-      output_path,
-      paste0(
-        "results_choice_main_neutral_non-neutral_summary_",
-        question_name,
-        ".csv"
-      )
-    ),
-    row.names = FALSE
-  )
-}
+all_question_summary <- all_question_summary[order(
+  all_question_summary$Question,
+  match(all_question_summary$Dataset, c("Strict", "Less Strict", "Super Strict"))
+), , drop = FALSE]
+
+write.csv(
+  all_question_summary,
+  file.path(
+    output_path,
+    "choice_main_binary_neutral_non-neutral_idv_3_questions.csv"
+  ),
+  row.names = FALSE
+)

@@ -1,0 +1,14 @@
+
+Contingency Table:
+      
+         0   1   2
+  gain 513 161 124
+  loss 136 306 131
+
+Chi-Square Test Results:
+
+	Pearson's Chi-squared test
+
+data:  table_frame_choice_strict
+X-squared = 233.58, df = 2, p-value < 2.2e-16
+

@@ -67,16 +67,12 @@ format_p_values <- function(p_values, digits = 2) {
   ifelse(
     is.na(p_values),
     NA,
-    ifelse(
-      p_values < 0.005,
-      formatC(p_values, format = "e", digits = digits),
-      formatC(round(p_values, digits), format = "f", digits = digits)
-    )
+    formatC(round(p_values, digits), format = "f", digits = digits)
   )
 }
 
 format_output_values <- function(df, digits = 2) {
-  p_value_columns <- intersect(names(df), c("p.value", "Pr(>|z|)", "Pr(>Chisq)"))
+  p_value_columns <- intersect(names(df), c("p.value", "p_value", "Pr(>|z|)", "Pr(>Chisq)"))
   for (column in p_value_columns) {
     df[[column]] <- format_p_values(df[[column]], digits = digits)
   }
@@ -88,6 +84,15 @@ format_output_values <- function(df, digits = 2) {
       ifelse(is.na(x), NA, formatC(x, format = "f", digits = digits))
     }
   )
+
+  if ("p_value" %in% names(df) && "significance" %in% names(df)) {
+    df <- df[, c(
+      setdiff(names(df), c("p_value", "significance")),
+      "p_value",
+      "significance"
+    )]
+  }
+
   df
 }
 
@@ -107,7 +112,7 @@ summarize_glmer <- function(model, dataset_spec, model_type) {
     CI_upper = cis[fixed_terms, 2],
     Std.Error = coefs[fixed_terms, "Std. Error"],
     z.value = coefs[fixed_terms, "z value"],
-    p.value = p_values,
+    p_value = p_values,
     significance = significance_label(p_values),
     OR = exp(fixef(model)),
     OR_CI_lower = exp(cis[fixed_terms, 1]),
