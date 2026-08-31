@@ -1,38 +1,78 @@
-# Behavioral Data Analysis - Framing Effect on Neutral Decision-Making
+# Framing Effect Analysis
 
-## Overview  
-This repository contains data analysis scripts and resources for a behavioral experiment investigating how framing (gain vs. loss) affects neutral decision-making. The project explores whether introducing a neutral option (in addition to standard risky/sure choices) mitigates classic framing biases in human decision-making.
+## Overview
+This project analyzes how framing influences decision-making in the main task and follow-up task. The data set contains several versions of the same choice task with different strictness thresholds, and the analysis compares behavior across those datasets.
 
+The project focuses on:
+- binary and trinary choice outcomes
+- main-task versus follow-up-task comparisons
+- individual-question analyses
+- combined analyses across datasets
+- confidence ratings and choice patterns
 
-## Repository Structure
-```
-├── data/ # Raw and cleaned behavioral data
-├── src/
-│ ├── data_preprocess.ipynb # Scripts for cleaning and preparing the data
-│ ├── analysis_classic_framing_effect.ipynb # Classic framing effect analysis
-│ └── EDA.ipynb # Exploratory data analysis
-├── results/ # Output figures, tables, and summary files
-├── README.md # This file
-```
+## Repository structure
+- [data](data): raw experiment data files for the different dataset versions
+- [src](src): analysis scripts in R
+- [figs](figs): generated figures and visualizations
+- [stat_results](stat_results): summary tables and model-output CSV files
+- [main.py](main.py): minimal Python entry point
+- [pyproject.toml](pyproject.toml): Python project configuration
+- [README.md](README.md): project documentation
 
-## Experimental Design  
-Participants will first encounter classic framing questions and choose among three options: sure, risky, and neutral. Those who select the neutral option will then be presented with the same scenario without the neutral option, requiring them to make a forced binary choice. In our experiment design, there are four test questions, and we mainly focus on the Asian Disease scenario, which will be presented first.
+## Current analysis scripts
+The R analysis scripts in [src](src) cover the main analyses used in this project:
 
+- choice analyses
+  - [src/analysis_choice_main_binary_neutral_non-neutral_cmb_lmm.R](src/analysis_choice_main_binary_neutral_non-neutral_cmb_lmm.R)
+  - [src/analysis_choice_main_binary_neutral_non-neutral_idv.R](src/analysis_choice_main_binary_neutral_non-neutral_idv.R)
+  - [src/analysis_choice_main_trinary_idv.R](src/analysis_choice_main_trinary_idv.R)
+  - [src/analysis_choice_follow_binary_idv.R](src/analysis_choice_follow_binary_idv.R)
+  - [src/analysis_choice_follow_binary_cmb_lmm.R](src/analysis_choice_follow_binary_cmb_lmm.R)
+  - [src/analysis_choice_compare_main_vs_follow_binary_idv.R](src/analysis_choice_compare_main_vs_follow_binary_idv.R)
+  - [src/analysis_choice_compare_main_vs_follow_binary_cmb.R](src/analysis_choice_compare_main_vs_follow_binary_cmb.R)
+  - [src/analysis_choice_main_ternary_cmb_lmm.R](src/analysis_choice_main_ternary_cmb_lmm.R)
 
-## Data Description
-Sample Size (from src/03_analysis_choice_idv.ipynb): N_SuperStrict = 320, N_Strict = 457, N_LessStrict = 630
+- confidence analyses
+  - [src/analysis_confidence_main_ternary_idv.R](src/analysis_confidence_main_ternary_idv.R)
+  - [src/analysis_confidence_main_ternary_cmb_lmm.R](src/analysis_confidence_main_ternary_cmb_lmm.R)
+  - [src/analysis_confidence_follow_binary_idv.R](src/analysis_confidence_follow_binary_idv.R)
+  - [src/analysis_confidence_follow_binary_cmb_lmm.R](src/analysis_confidence_follow_binary_cmb_lmm.R)
 
-## Analysis Goals
-- Preprocess and clean behavioral data  
-- Explore response distributions 
-- Quantify framing effects with and without neutral options  
-- Compare behavior across gain and loss frames  
-- Generate summary figures and statistics for publication
+- exploratory or visualization notebooks
+  - [src/descriptitve_stat.ipynb](src/descriptitve_stat.ipynb)
+  - [src/visualization_choice.ipynb](src/visualization_choice.ipynb)
+  - [src/visualization_confidence.ipynb](src/visualization_confidence.ipynb)
 
-## Requirements 
-This project uses both Python and R. You’ll need environments for both languages set up to run all scripts.
+## Datasets
+The project includes three dataset variants:
+- Strict
+- Less strict
+- Super strict
 
-- Python 3.9.2: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `statsmodels`, `jupyter`
+These correspond to the CSV files in [data](data), including the main choice dataset files and follow-up task data.
 
-- R4.2: `lme4`, `lmerTest`, `emmeans`, `nnet`
+## Outputs
+Results are written to [stat_results](stat_results), with CSV summaries for model coefficients, confidence intervals, p-values, and significance labels. Figures are stored in [figs](figs).
+
+## Analysis conventions
+Across the project, the outputs generally follow a consistent structure:
+- dataset tag
+- question label where relevant
+- term or coefficient name
+- estimate
+- confidence interval bounds
+- p-value
+- significance label
+- ordering by question and dataset where requested
+
+## Environment
+Python dependencies are managed in [pyproject.toml](pyproject.toml). The R analysis scripts rely on packages such as:
+- lme4
+- lmerTest
+- emmeans
+- nnet
+- statsmodels for related workflow support
+
+## Notes
+This repository is organized around reproducible analysis scripts and summary CSV outputs rather than long-form text reports. The active output workflow is centered on the generated files in [stat_results](stat_results), which are the main artifacts for downstream interpretation and reporting.
 
