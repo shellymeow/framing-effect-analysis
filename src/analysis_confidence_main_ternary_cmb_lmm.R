@@ -6,7 +6,6 @@
 #
 # Task: main task, "sure" vs "risky" vs "neutral" (reference)
 # Reference frame: "gain"
-# Reference question: "Disease"
 # -------------------------------------------------------
 
 rm(list = objects())
@@ -128,13 +127,7 @@ run_main_lmm <- function(dataset_spec) {
   )
   print(summary(qrandom_model))
 
-  qfix_model <- lmer(
-    evaluation ~ frame * choice + question + (1 | participant_id),
-    data = data_main
-  )
-  print(summary(qfix_model))
-
-  invisible(list(qrandom = qrandom_model, qfix = qfix_model))
+  invisible(list(qrandom = qrandom_model))
 }
 
 summarize_fixed_effects_across_datasets <- function(models, dataset_specs, model_type) {
@@ -194,56 +187,16 @@ summarize_anova_across_datasets <- function(models, dataset_specs, model_type) {
   )
 }
 
-summarize_model_comparisons_across_datasets <- function(models, dataset_specs) {
-  do.call(
-    rbind,
-    Map(
-      function(model_set, dataset_spec) {
-        comparison_df <- as.data.frame(anova(model_set$qfix, model_set$qrandom))
-        comparison_df$model_name <- row.names(comparison_df)
-        comparison_df$dataset <- dataset_spec$label
-        comparison_df$dataset_slug <- dataset_spec$slug
-        row.names(comparison_df) <- NULL
-        comparison_df[, c(
-          "dataset",
-          "dataset_slug",
-          "model_name",
-          setdiff(
-            names(comparison_df),
-            c("dataset", "dataset_slug", "model_name")
-          )
-        )]
-      },
-      models,
-      dataset_specs
-    )
-  )
-}
-
 save_combined_summaries <- function(models, dataset_specs) {
   qrandom_coef_summary <- summarize_fixed_effects_across_datasets(
     models,
     dataset_specs,
     "qrandom"
   )
-  qfix_coef_summary <- summarize_fixed_effects_across_datasets(
-    models,
-    dataset_specs,
-    "qfix"
-  )
   qrandom_anova_summary <- summarize_anova_across_datasets(
     models,
     dataset_specs,
     "qrandom"
-  )
-  qfix_anova_summary <- summarize_anova_across_datasets(
-    models,
-    dataset_specs,
-    "qfix"
-  )
-  model_comparison_summary <- summarize_model_comparisons_across_datasets(
-    models,
-    dataset_specs
   )
 
   write.csv(
@@ -252,26 +205,8 @@ save_combined_summaries <- function(models, dataset_specs) {
     row.names = FALSE
   )
   write.csv(
-    format_output_values(qfix_coef_summary),
-    file = file.path(output_path, "confidence_main_cmb_qfix_lmm_3_datasets.csv"),
-    row.names = FALSE
-  )
-  write.csv(
     format_output_values(qrandom_anova_summary),
     file = file.path(output_path, "confidence_main_cmb_qrandom_anova_3_datasets.csv"),
-    row.names = FALSE
-  )
-  write.csv(
-    format_output_values(qfix_anova_summary),
-    file = file.path(output_path, "confidence_main_cmb_qfix_anova_3_datasets.csv"),
-    row.names = FALSE
-  )
-  write.csv(
-    format_output_values(model_comparison_summary),
-    file = file.path(
-      output_path,
-      "confidence_main_cmb_qfix_vs_qrandom_3_datasets.csv"
-    ),
     row.names = FALSE
   )
 }

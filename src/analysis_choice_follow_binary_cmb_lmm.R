@@ -3,7 +3,6 @@
 #
 # Outcome: "sure" (0, reference) vs "risky" (1)
 # Reference frame: "gain"
-# Reference question: "Disease"
 # -------------------------------------------------------
 
 rm(list = objects())
@@ -126,40 +125,9 @@ run_follow_models <- function(dataset_spec) {
     family = binomial
   )
 
-  qfix_model <- glmer(
-    choice ~ frame * question + (1 | participant_id),
-    data = data_follow,
-    family = binomial
-  )
-
   list(
     qrandom = qrandom_model,
-    qfix = qfix_model,
-    qrandom_summary = summarize_glmer(qrandom_model, dataset_spec, "qrandom"),
-    qfix_summary = summarize_glmer(qfix_model, dataset_spec, "qfix")
-  )
-}
-
-summarize_model_comparisons <- function(results, dataset_specs) {
-  do.call(
-    rbind,
-    Map(
-      function(result, dataset_spec) {
-        comparison <- as.data.frame(anova(result$qrandom, result$qfix))
-        comparison$model_name <- row.names(comparison)
-        comparison$dataset <- dataset_spec$label
-        comparison$dataset_slug <- dataset_spec$slug
-        row.names(comparison) <- NULL
-        comparison[, c(
-          "dataset",
-          "dataset_slug",
-          "model_name",
-          setdiff(names(comparison), c("dataset", "dataset_slug", "model_name"))
-        )]
-      },
-      results,
-      dataset_specs
-    )
+    qrandom_summary = summarize_glmer(qrandom_model, dataset_spec, "qrandom")
   )
 }
 
@@ -167,21 +135,9 @@ results <- lapply(dataset_specs, run_follow_models)
 names(results) <- vapply(dataset_specs, `[[`, character(1), "slug")
 
 qrandom_summary <- do.call(rbind, lapply(results, `[[`, "qrandom_summary"))
-qfix_summary <- do.call(rbind, lapply(results, `[[`, "qfix_summary"))
-model_comparison <- summarize_model_comparisons(results, dataset_specs)
 
 write.csv(
   format_output_values(qrandom_summary),
   file = file.path(output_path, "choice_follow_binary_cmb_qrandom_lmm_3_datasets.csv"),
-  row.names = FALSE
-)
-write.csv(
-  format_output_values(qfix_summary),
-  file = file.path(output_path, "choice_follow_binary_cmb_qfix_lmm_3_datasets.csv"),
-  row.names = FALSE
-)
-write.csv(
-  format_output_values(model_comparison),
-  file = file.path(output_path, "choice_follow_binary_cmb_qrandom_vs_qfix_3_datasets.csv"),
   row.names = FALSE
 )

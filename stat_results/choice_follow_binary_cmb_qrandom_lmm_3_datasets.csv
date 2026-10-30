@@ -1,0 +1,7 @@
+"dataset","dataset_slug","model","term","Estimate","CI_lower","CI_upper","Std.Error","z.value","p.value","significance","OR","OR_CI_lower","OR_CI_upper"
+"Strict","strict","qrandom","(Intercept)","-0.97","-1.45","-0.48","0.25","-3.92","8.88e-05","<.001***","0.38","0.23","0.62"
+"Strict","strict","qrandom","frameloss","2.11","1.35","2.86","0.39","5.46","4.79e-08","<.001***","8.22","3.86","17.52"
+"Less strict","less_strict","qrandom","(Intercept)","-0.95","-1.42","-0.48","0.24","-3.95","7.98e-05","<.001***","0.39","0.24","0.62"
+"Less strict","less_strict","qrandom","frameloss","2.00","1.34","2.66","0.34","5.95","2.63e-09","<.001***","7.41","3.83","14.33"
+"Super strict","super_strict","qrandom","(Intercept)","-0.92","-1.70","-0.14","0.40","-2.30","0.02","<.05*","0.40","0.18","0.87"
+"Super strict","super_strict","qrandom","frameloss","1.91","1.01","2.82","0.46","4.15","3.39e-05","<.001***","6.77","2.74","16.73"
