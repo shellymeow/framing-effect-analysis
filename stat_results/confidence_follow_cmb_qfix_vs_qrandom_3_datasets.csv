@@ -1,0 +1,7 @@
+"dataset","dataset_slug","model_name","npar","AIC","BIC","logLik","-2*log(L)","Chisq","Df","Pr(>Chisq)"
+"Strict","strict","model_set$qrandom","7.00","2297.79","2322.58","-1141.90","2283.79"," NA"," NA",NA
+"Strict","strict","model_set$qfix","8.00","2295.28","2323.61","-1139.64","2279.28","4.52","1.00","0.03"
+"Less strict","less_strict","model_set$qrandom","7.00","3319.51","3346.84","-1652.75","3305.51"," NA"," NA",NA
+"Less strict","less_strict","model_set$qfix","8.00","3317.95","3349.20","-1650.98","3301.95","3.55","1.00","0.06"
+"Super strict","super_strict","model_set$qrandom","7.00","1503.61","1525.48","-744.81","1489.61"," NA"," NA",NA
+"Super strict","super_strict","model_set$qfix","8.00","1501.65","1526.64","-742.83","1485.65","3.96","1.00","0.05"
