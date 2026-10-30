@@ -1,4 +1,5 @@
 # Framing Effect Analysis
+  This brach include all the scripts of more analysis has been tryed than the main branch. 
 
 ## Overview
 This project analyzes how framing influences decision-making in the main task and follow-up task. The data set contains several versions of the same choice task with different strictness thresholds, and the analysis compares behavior across those datasets.
